@@ -1,0 +1,26 @@
+<!--pages/detail/detail.wxml-->
+<view class='containar'>
+<!--标题信息-->
+<view class='article_title_container'>
+  <text class='article_title_text'>{{article.title}}</text>
+  <view class='article_title_bottom'>
+    <view class='article_title_left'>
+      <text class="article_source">{{''===article.source?'未知来源':article.source}}</text>
+      <text class="article_date">{{article.date}}</text>
+    </view>
+    <view class='article_title_right'>阅读 {{article.readCount}}</view>
+  </view>
+</view>
+<!--正文-->
+<view class='article_content_container'>
+  <view class='article_content_text'>
+    <block wx:for="{{article.content}}" wx:key="id">
+     <image wx:if="{{item.type==='image'}}" src='{{item.src}}'></image>
+     <text class="article_content_detail" wx:if="{{item.type==='p'}}">{{item.text}}</text>
+     <view class="article_content_strong" wx:if="{{item.type==='strong'}}" style='font-weight: 600;'>
+     {{item.text}}</view>
+    </block>
+  </view>
+
+</view>
+</view>

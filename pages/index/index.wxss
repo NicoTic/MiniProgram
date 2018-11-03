@@ -1,0 +1,162 @@
+/**index.wxss**/
+view,image,text,
+view::before,
+view::after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.segments_list{
+  width: 100vw;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background: #2A8BD3;
+  font-size: 15px;
+  position: fixed;
+  top: 0;
+  z-index:1;
+}
+
+.segment_item{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  color:#D2E8F8;
+  display: inline-block;
+  line-height: 45px;
+  font-weight: 400;
+}
+
+.segment_item.active{
+  color:#fff;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+swiper {
+  height: 400rpx;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.banner{
+  position: relative;
+  box-sizing: border-box;
+}
+
+.banner .swiper-item-bg{
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  position: relative;
+}
+
+swiper-item .slide-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:50%;
+  padding: 10px 20px 0 10px;
+  transform:translateX(-50%);
+}
+
+swiper-item text{
+  position: absolute;
+  bottom:10px;
+  left:20px;
+  height:90rpx;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.articles_list{
+  width: 100vw;
+  height: 100%;
+}
+
+.article_item{
+  display: flex;
+  height: 100px;
+  margin: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.article_item:last-child{
+  border-bottom: none;
+}
+
+.article_item_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  float: left;
+  width: 67%;
+  height: 80px;
+  position:relative;
+}
+
+.article_title{
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 45rpx;
+  color: #3c3d3f;
+}
+
+.article_source_and_date{
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  align-items: center;
+}
+
+.article_source {
+  opacity:0.5;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  margin-right: 30px;
+}
+
+.article_date {
+  opacity: 0.5;
+  font-size: 25rpx;
+  line-height: 35rpx;
+}
+
+
+.article_item_right{
+  float: right;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.article_icon{
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+/* .article_item::after{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+} */
+
+.article_item::before,
+.article_item::after {
+  content: "";
+  display: table;
+}
+.article_item::after {
+  clear: both;
+}
+.article_item {
+  clear: both;
+  _zoom: 1;
+}

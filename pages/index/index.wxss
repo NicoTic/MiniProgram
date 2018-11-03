@@ -7,14 +7,17 @@ view::after {
           box-sizing: border-box;
 }
 
+.scroll-x{
+  background: #2A8BD3;
+}
+
 .segments_list{
-  width: 100vw;
+  width: 100%;
   height: 45px;
   display: flex;
   align-items: center;
-  background: #2A8BD3;
   font-size: 15px;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index:1;
 }
@@ -27,6 +30,7 @@ view::after {
   display: inline-block;
   line-height: 45px;
   font-weight: 400;
+  flex-shrink: 0;
 }
 
 .segment_item.active{

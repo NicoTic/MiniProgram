@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class=''>
-  <scroll-view scroll-x="true" class="news_segments" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll>
+<view>
+  <scroll-view scroll-x="true" class="scroll-x" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll>
      <view class="segments_list">
       <view class="segment_item {{item.active ? 'active' : ''}}" wx:for="{{segmentsList}}" data-sid="{{item.segment_id}}" bindtap='onSectionClicked'>
         <view class='segment-title'>{{item.title}}</view>

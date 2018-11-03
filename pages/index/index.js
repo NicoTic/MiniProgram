@@ -8,7 +8,9 @@ const segmentsList = [
   { segment_id: 3, title: "娱乐", en_title: "yl", active: false },
   { segment_id: 4, title: "军事", en_title: "js", active: false },
   { segment_id: 5, title: "体育", en_title: "ty", active: false },
-  { segment_id: 6, title: "其他", en_title: "other", active: false }
+  { segment_id: 6, title: "其他", en_title: "other", active: false},
+  {segment_id: 6, title: "其他", en_title: "other", active: false} ,
+  {segment_id: 6, title: "其他", en_title: "other", active: false }
 ];
 var currentSectionIndex = 0;
 

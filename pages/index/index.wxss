@@ -7,6 +7,11 @@ view::after {
           box-sizing: border-box;
 }
 
+.view_container{
+  width: 100vw;
+  height: 100vh;
+}
+
 .scroll-x{
   background: #2A8BD3;
 }
@@ -39,46 +44,18 @@ view::after {
   font-size: 16px;
 }
 
-swiper {
-  height: 400rpx;
-  width: 100%;
-  margin-top: 45px;
-}
-
-.banner{
-  position: relative;
-  box-sizing: border-box;
-}
-
-.banner .swiper-item-bg{
+.tab-content{
   width: 100%;
   height: 100%;
-  opacity: 0.2;
-  position: relative;
 }
 
-swiper-item .slide-image {
-  position: absolute;
+swiper-item{
   width: 100%;
   height: 100%;
-  top:0;
-  left:50%;
-  padding: 10px 20px 0 10px;
-  transform:translateX(-50%);
 }
 
-swiper-item text{
-  position: absolute;
-  bottom:10px;
-  left:20px;
-  height:90rpx;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.articles_list{
-  width: 100vw;
+.scroll-h{
+  width: 100%;
   height: 100%;
 }
 

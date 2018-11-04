@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view>
-  <scroll-view scroll-x="true" class="scroll-x" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll>
+<view class="view_container">
+  <scroll-view scroll-x="true" class="scroll-x" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll scroll-left="{{scrollLeft}}">
      <view class="segments_list">
       <view class="segment_item {{item.active ? 'active' : ''}}" wx:for="{{segmentsList}}" data-sid="{{item.segment_id}}" bindtap='onSectionClicked'>
         <view class='segment-title'>{{item.title}}</view>
@@ -8,29 +8,24 @@
   </view>
   </scroll-view>
 
- <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item class="banner">
-      <image class="swiper-item-bg" src='/images/swiper_bg.jpg'/>
-      <image class="slide-image" src="{{item.image}}"/>
-      <text>{{item.title}}</text>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{segmentsList}}">
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <block class='articles_list' wx:for="{{articlesList}}">
+          <view class='article_item' data-aid="{{item.id}}" bindtap='onArticleClicked'>
+            <view class='article_item_left'>
+              <view class='article_title'>{{item.title}}</view>
+              <view class='article_source_and_date'>
+                <view class='article_source'>{{item.source===''?'未知来源':item.source}}</view>
+                <view class='article_date'>{{item.date}}</view>
+              </view>
+            </view>
+            <view class='article_item_right'>
+              <image class='article_icon' src='{{item.firstImage}}'></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
     </swiper-item>
-  </block>
-</swiper>
-
-<view class='articles_list'>
-    <view class='article_item' wx:for='{{articlesList}}' data-aid="{{item.id}}" bindtap='onArticleClicked'>
-      <view class='article_item_left'>
-        <view class='article_title'>{{item.title}}</view>
-        <view class='article_source_and_date'>
-            <view class='article_source'>{{item.source===''?'未知来源':item.source}}</view>
-            <view class='article_date'>{{item.date}}</view>
-        </view>
-      </view>
-      <view class='article_item_right'>
-        <image class='article_icon' src='{{item.firstImage}}'></image>
-      </view>
-    </view>
-  </view>
-</view>
+  </swiper>
+</view> 

@@ -1,0 +1,8 @@
+function timetrans(time) {
+  console.log(time);
+  var _time = (time.length > 10) ? time.substring(0, 10) : time; // 格式化时间戳,如果时间戳是毫秒级别就切割字符串，转换成秒级别
+  return _time;
+}
+module.exports = {
+  timetrans: timetrans
+}

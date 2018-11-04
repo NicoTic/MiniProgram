@@ -72,10 +72,10 @@ Page({
         let result = res.data.result;
         console.log(result);
         if (result && result.length) {
-          //截取日期字符串
-          result.forEach(function (item) {
-            item.date = item.date.substring(0, 10);
-          })
+          // //截取日期字符串
+          // result.forEach(function (item) {
+          //   item.date = item.date.substring(0, 10);
+          // })
           //设置新闻列表数据
           this.setData({
             articlesList: result

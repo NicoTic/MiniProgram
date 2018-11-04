@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs src="../util/utils.wxs" module="utils" />
 <view>
   <scroll-view scroll-x="true" class="scroll-x" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll>
      <view class="segments_list">
@@ -25,7 +26,7 @@
         <view class='article_title'>{{item.title}}</view>
         <view class='article_source_and_date'>
             <view class='article_source'>{{item.source===''?'未知来源':item.source}}</view>
-            <view class='article_date'>{{item.date}}</view>
+            <view class='article_date'>{{utils.timetrans(item.date)}}</view>
         </view>
       </view>
       <view class='article_item_right'>

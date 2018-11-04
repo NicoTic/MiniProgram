@@ -14,6 +14,7 @@ var currentSectionIndex = 0;
 
 Page({
   data: {
+    cureentTab: 0,
     segmentsList: segmentsList,
     imgUrls: [{ image: '/images/toutiao_news_first.jpg', title: '独家对话胡一天:不介意被定义为"流量"偶像' },
     { image: '/images/toutiao_news_second.jpg', title: "重庆公交坠江原因公布:乘客与司机互殴致车辆失控" },
@@ -40,16 +41,18 @@ Page({
   onSectionClicked(event) {
     console.log(event);
     let sid = event.currentTarget.dataset.sid;
-    //刷新新闻类别选中状态
-    for (var i in segmentsList) {
-      if (segmentsList[i]['segment_id'] == sid) {
-        segmentsList[i]['active'] = true
-        currentSectionIndex = i
-      } else {
-        segmentsList[i]['active'] = false
-      }
-    }
+    
+    // //刷新新闻类别选中状态
+    // for (var i in segmentsList) {
+    //   if (segmentsList[i]['segment_id'] == sid) {
+    //     segmentsList[i]['active'] = true
+    //     currentSectionIndex = i
+    //   } else {
+    //     segmentsList[i]['active'] = false
+    //   }
+    // }
     this.setData({
+      cureentTab: sid,
       segmentsList: segmentsList
     });
     this.loadArticles(sid);
@@ -83,7 +86,7 @@ Page({
         console.log("onFail");
       },
       complete: () => {
-        callback && callback();
+        typeof callback === 'function' && callback();
       }
     })
   },

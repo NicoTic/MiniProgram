@@ -8,7 +8,6 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#2E99E2",
     "navigationBarTitleText": "QZNews",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "white"
   }
 }

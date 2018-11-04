@@ -2,7 +2,7 @@
 <view>
   <scroll-view scroll-x="true" class="scroll-x" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll>
      <view class="segments_list">
-      <view class="segment_item {{item.active ? 'active' : ''}}" wx:for="{{segmentsList}}" data-sid="{{item.segment_id}}" bindtap='onSectionClicked'>
+      <view class="segment_item {{cureentTab === item.segment_id ? 'active' : ''}}" wx:for="{{segmentsList}}" data-sid="{{item.segment_id}}" bindtap='onSectionClicked'>
         <view class='segment-title'>{{item.title}}</view>
     </view>
   </view>
@@ -12,8 +12,8 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item class="banner">
-      <image class="swiper-item-bg" src='/images/swiper_bg.jpg'/>
-      <image class="slide-image" src="{{item.image}}"/>
+      <image class="swiper-item-bg" src='/images/swiper_bg.jpg' mode='aspectFill'/>
+      <image class="slide-image" src="{{item.image}}" mode='aspectFill'/>
       <text>{{item.title}}</text>
     </swiper-item>
   </block>
@@ -29,7 +29,7 @@
         </view>
       </view>
       <view class='article_item_right'>
-        <image class='article_icon' src='{{item.firstImage}}'></image>
+        <image class='article_icon' src='{{item.firstImage.length==0 ? "/images/default_src.png":item.firstImage}}'></image>
       </view>
     </view>
   </view>

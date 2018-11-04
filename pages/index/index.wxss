@@ -42,7 +42,6 @@ view::after {
 swiper {
   height: 400rpx;
   width: 100%;
-  margin-top: 45px;
 }
 
 .banner{
@@ -143,14 +142,6 @@ swiper-item text{
   height: 80px;
   display: block;
 }
-
-/* .article_item::after{
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-} */
 
 .article_item::before,
 .article_item::after {
